@@ -8,7 +8,7 @@ def client():
     with app.test_client() as client:
         yield client
 
-
+# MESSAGE SHOULD be Hello world with 200 status code otherwise code will fail
 def test_app_is_working(client):
     response = client.get('/')
     assert response.status_code == 200
